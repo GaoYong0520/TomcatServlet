@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+    <!--创建servlet实例-->
+    <!--<servlet>-->
+        <!--<servlet-name>implements</servlet-name>-->
+        <!--<servlet-class>servlet.ServletDemo</servlet-class>-->
+        <!--&lt;!&ndash;优先级&ndash;&gt;-->
+        <!--<load-on-startup>1</load-on-startup>-->
+    <!--</servlet>-->
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>implements</servlet-name>-->
+        <!--<url-pattern>/impl</url-pattern>-->
+    <!--</servlet-mapping>-->
+
+    <!--<servlet>-->
+        <!--<servlet-name>generic</servlet-name>-->
+        <!--<servlet-class>servlet.GenericServletDemo</servlet-class>-->
+    <!--</servlet>-->
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>generic</servlet-name>-->
+        <!--<url-pattern>/generic</url-pattern>-->
+    <!--</servlet-mapping>-->
+    <!--<servlet>-->
+        <!--<servlet-name>httpservlet</servlet-name>-->
+        <!--<servlet-class>servlet.HttpServletDemo</servlet-class>-->
+    <!--</servlet>-->
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>httpservlet</servlet-name>-->
+        <!--<url-pattern>*.do</url-pattern>-->
+    <!--</servlet-mapping>-->
+    <servlet>
+        <servlet-name>servletConfigDemo</servlet-name>
+        <servlet-class>servlet.ServletConfigDemo</servlet-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>GBK</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>servletConfigDemo</servlet-name>
+        <url-pattern>/config</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>application</servlet-name>
+        <servlet-class>servlet.ServletContextDemo</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>application</servlet-name>
+        <url-pattern>/context</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>test</servlet-name>
+        <servlet-class>servlet.ServletContextTest</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>test</servlet-name>
+        <url-pattern>/context/test</url-pattern>
+    </servlet-mapping>
+</web-app>

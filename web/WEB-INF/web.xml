@@ -4,33 +4,39 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
     <!--创建servlet实例-->
-    <!--<servlet>-->
-        <!--<servlet-name>implements</servlet-name>-->
-        <!--<servlet-class>servlet.ServletDemo</servlet-class>-->
-        <!--&lt;!&ndash;优先级&ndash;&gt;-->
-        <!--<load-on-startup>1</load-on-startup>-->
-    <!--</servlet>-->
-    <!--<servlet-mapping>-->
-        <!--<servlet-name>implements</servlet-name>-->
-        <!--<url-pattern>/impl</url-pattern>-->
-    <!--</servlet-mapping>-->
+    <servlet>
+        <servlet-name>implements</servlet-name>
+        <servlet-class>servlet.ServletDemo</servlet-class>
+        <!--优先级-->
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>implements</servlet-name>
+        <url-pattern>/impl</url-pattern>
+    </servlet-mapping>
 
-    <!--<servlet>-->
-        <!--<servlet-name>generic</servlet-name>-->
-        <!--<servlet-class>servlet.GenericServletDemo</servlet-class>-->
-    <!--</servlet>-->
-    <!--<servlet-mapping>-->
-        <!--<servlet-name>generic</servlet-name>-->
-        <!--<url-pattern>/generic</url-pattern>-->
-    <!--</servlet-mapping>-->
-    <!--<servlet>-->
-        <!--<servlet-name>httpservlet</servlet-name>-->
-        <!--<servlet-class>servlet.HttpServletDemo</servlet-class>-->
-    <!--</servlet>-->
-    <!--<servlet-mapping>-->
-        <!--<servlet-name>httpservlet</servlet-name>-->
-        <!--<url-pattern>*.do</url-pattern>-->
-    <!--</servlet-mapping>-->
+    <servlet>
+        <servlet-name>generic</servlet-name>
+        <servlet-class>servlet.GenericServletDemo</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>generic</servlet-name>
+        <url-pattern>/generic</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>httpservlet</servlet-name>
+        <servlet-class>servlet.HttpServletDemo</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>httpservlet</servlet-name>
+        <url-pattern>*.do</url-pattern>
+    </servlet-mapping>
+
+    <!--应用全局配置-->
+    <context-param>
+        <param-name>encoding</param-name>
+        <param-value>UTF-8</param-value>
+    </context-param>
     <servlet>
         <servlet-name>servletConfigDemo</servlet-name>
         <servlet-class>servlet.ServletConfigDemo</servlet-class>
@@ -60,5 +66,90 @@
     <servlet-mapping>
         <servlet-name>test</servlet-name>
         <url-pattern>/context/test</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>SourcePath</servlet-name>
+        <servlet-class>servlet.SourcePath</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SourcePath</servlet-name>
+        <url-pattern>/path</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ServletDispatch</servlet-name>
+        <servlet-class>servlet.ServletDispatch</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DispatchDemo</servlet-name>
+        <servlet-class>servlet.DispatchDemo</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DispatchDemo</servlet-name>
+        <url-pattern>/dispatch/test</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletDispatch</servlet-name>
+        <url-pattern>/dispatch</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>Response</servlet-name>
+        <servlet-class>http.servlet.response.ServletResponse</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Response</servlet-name>
+        <url-pattern>/resp</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>filedownload</servlet-name>
+        <servlet-class>http.servlet.response.ServletFileDownload</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>filedownload</servlet-name>
+        <url-pattern>/img</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>passimg</servlet-name>
+        <servlet-class>http.servlet.response.ServletImage</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServletRedirect</servlet-name>
+        <servlet-class>http.servlet.response.ServletRedirect</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletRedirect</servlet-name>
+        <url-pattern>/source/redirect</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>passimg</servlet-name>
+        <url-pattern>/passimg</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Source</servlet-name>
+        <servlet-class>http.servlet.response.ServletRedirectSource</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Source</servlet-name>
+        <url-pattern>/source</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>request</servlet-name>
+        <servlet-class>http.servlet.request.ServletRequest</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Beanutil</servlet-name>
+        <servlet-class>beanutils.Beanutil</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Beanutil</servlet-name>
+        <url-pattern>/beanutil</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>request</servlet-name>
+        <url-pattern>/request</url-pattern>
     </servlet-mapping>
 </web-app>

@@ -9,6 +9,10 @@
           <element id="directory" name="classes">
             <element id="module-output" name="TomcatServlet" />
           </element>
+          <element id="directory" name="lib">
+            <element id="file-copy" path="$PROJECT_DIR$/lib/commons-beanutils-1.8.3.jar" />
+            <element id="file-copy" path="$PROJECT_DIR$/lib/commons-logging-1.1.1.jar" />
+          </element>
         </element>
       </root>
     </artifact>

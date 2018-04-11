@@ -7,5 +7,34 @@
 </head>
 <body>
     <h1>Hello tomcat</h1>
+    <p><img id="passimg" src="/passimg"></p>
+    <button onclick="changeImg()">看不清，换一张</button>
+    <p>
+        <a id="alink" src="/source">Link</a>
+    </p>
+
+    <form action="/request" method="post">
+        用户名：<input type="text" name="username"/> <br>
+        密码：<input type="password" name="pwd"> <br>
+        性别：<input type="radio" name="sex" value="男" checked="checked">男
+            <input type="radio" name="sex" value="女">女 <br>
+
+        爱好：
+        <input type="checkbox" name="hobby" value="music">Music
+        <input type="checkbox" name="hobby" value="move">Movie
+        <input type="checkbox" name="hobby" value="code">Code
+        <br>
+        城市：
+        <select name="city" id="">
+            <option>-----选择-----</option>
+            <option value="bj">北京</option>
+            <option value="sh">上海</option>
+            <option value="gz">广州</option>
+        </select>
+        <br>
+
+        <input type="submit" value="注册">
+
+    </form>
 </body>
 </html>

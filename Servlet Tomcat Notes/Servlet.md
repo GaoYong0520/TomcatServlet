@@ -91,8 +91,6 @@ getOutputStream().write(string.getBytes());
 - 图片验证码
 - 浏览器刷新 缓存 下载 ......
 
-### 重定向
-
 ### Others
 
 ## HttpServletRequest
@@ -116,6 +114,42 @@ getOutputStream().write(string.getBytes());
     - void setAttribute(String name, Object value);
     - object getAttribute(String name);
     - void removeAttribute(String name);
+
+### 请求转发与重定向
+
+- forward
+- include
+
+## 编码问题
+
+
+
+```java
+public class ServletInputStreamDemo extends HttpServlet {
+
+	public void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
+		//获取表单数据
+		ServletInputStream sis = request.getInputStream();
+		int len = 0;
+		byte[] b = new byte[1024];
+		while((len=sis.read(b))!=-1){
+			//System.out.println(new String(new String(b,0,len).getBytes(),"utf-8"));
+			System.out.println(new String(b, 0, len, "UTF-8"));
+		}
+		
+		sis.close();
+	}
+
+	public void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		doGet(request, response);
+	}
+
+}
+
+```
 
 
 ## Others
